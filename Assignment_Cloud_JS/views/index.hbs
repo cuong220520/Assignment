@@ -1,0 +1,102 @@
+<h1>MONGGODB - EXERCISE</h1>
+
+<div id="detail" style="overflow-x:auto"> 
+  <h3>Get Data</h3>
+  <a href="/index/get-data">LOAD DATA</a>
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Product Name</th>
+      <th>Price</th>
+      <th>Stock</th>
+      <th>Supplier</th>
+      <th>Brand</th>
+      <th>Image</th>
+    </tr>
+    {{# each items }}
+      <tr>
+        <td>{{ this._id }}</td>
+        <td>{{ this.productName }}</td>
+        <td>{{ this.price }}</td>
+        <td>{{ this.stock }}</td>
+        <td>{{ this.supplier }}</td>
+        <td>{{ this.brand }}</td>
+        <td>{{ image }}</td>
+      </tr>
+    {{/each}}
+  </table>
+</div>
+
+<section class="insert">
+  <h3>Insert Data</h3>
+  <form action="/index/insert" enctype="multipart/form-data" method="POST">
+    <div class="input">
+      <label for="title">Product Name</label>
+      <input type="text" name="productName" id="productName">
+    </div>
+    <div class="input">
+      <label for="title">Price</label>
+      <input type="text" name="price" id="price">
+    </div>
+    <div class="input">
+      <label for="title">Stock</label>
+      <input type="text" name="stock" id="stock">
+    </div>
+    <div class="input">
+      <label for="title">Supplier</label>
+      <input type="text" name="supplier" id="supplier">
+    </div>
+    <div class="input">
+      <label for="title">Brand</label>
+      <input type="text" name="brand" id="brand">
+    </div>
+    <div class="input">
+      <label for="title">Image</label>
+      <input type="file" name="image" id="image">
+    </div>
+    <button type="submit">INSERT</button>
+  </form>
+</section>
+
+<section class="update">
+  <h3>Update Data</h3>
+  <form action="/index/update" enctype="multipart/form-data" method="post">
+    <div class="input">
+      <label for="id">ID</label>
+      <input type="text" name="id" id="id">
+    </div>
+    <div class="input">
+      <label for="title">Product Name</label>
+      <input type="text" name="productName" id="productName">
+    </div>
+    <div class="input">
+      <label for="title">Price</label>
+      <input type="text" name="price" id="price">
+    </div>
+    <div class="input">
+      <label for="title">Stock</label>
+      <input type="text" name="stock" id="stock">
+    </div>
+    <div class="input">
+      <label for="title">Supplier</label>
+      <input type="text" name="supplier" id="supplier">
+    </div>
+    <div class="input">
+      <label for="title">Brand</label>
+      <input type="text" name="brand" id="brand">
+    </div>
+    <button type="submit">UPDATE</button>
+  </form>
+</section>
+
+<section class="delete">
+  <h3>Delete Data</h3>
+  <form action="/index/delete" method="post">
+    <div class="input">
+      <label for="id">ID</label>
+      <input type="text" name="id" id="id">
+    </div>
+    <button type="submit">DELETE</button>
+  </form>
+</section>
+</div>
